@@ -35,6 +35,7 @@ _OUR_APPS = ["items",
              "item_definitions",
              "item_groups",
              "item_adjustments",
+             "user_groups",
 ]
 
 INSTALLED_APPS = [
