@@ -7,18 +7,12 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Item',
-            fields=[
-                ('name', models.TextField(primary_key=True, serialize=False)),
-            ],
-            options={
-                'db_table': 'item',
-                'managed': True,
-            },
+            name="Item",
+            fields=[("name", models.TextField(primary_key=True, serialize=False)),],
+            options={"db_table": "item", "managed": True,},
         ),
     ]
