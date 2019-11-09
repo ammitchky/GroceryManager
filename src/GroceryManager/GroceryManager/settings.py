@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-_OUR_APPS = ["items"]
+_OUR_APPS = ["items",
+             "item_locations",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
