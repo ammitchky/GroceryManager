@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 _OUR_APPS = ["items",
              "item_locations",
              "item_definitions",
+             "item_groups",
 ]
 
 INSTALLED_APPS = [
