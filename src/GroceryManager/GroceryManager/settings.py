@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-_OUR_APPS = ["items",
+_OUR_APPS = ["frontend",
+             "items",
              "item_locations",
              "item_definitions",
              "item_groups",
