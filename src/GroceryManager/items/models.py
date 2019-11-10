@@ -21,6 +21,8 @@ class Item(models.Model):
     item_location = models.ForeignKey(ItemLocation, on_delete=models.CASCADE, null=True)
     itemgroup = models.ManyToManyField(ItemGroup)
     expiration_date = models.DateTimeField(null=True)
+    quantity = models.DecimalField(default=0.0, max_digits=7, decimal_places=2)
+    desired_quantity = models.DecimalField(default=0.0, max_digits=7, decimal_places=2)
 
     class Meta:
         managed = True
