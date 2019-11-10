@@ -1,8 +1,16 @@
-from rest_framework import routers
+from rest_framework_extensions.routers import ExtendedSimpleRouter
 
-from .views import Item_DefinitionViewSet
+from .views import ItemDefinitionViewSet, ItemSpecificationViewSet
 
-router = routers.SimpleRouter()
-router.register(r"", Item_DefinitionViewSet)
+router = ExtendedSimpleRouter()
+services_router = router.register(
+    r"", ItemDefinitionViewSet, basename="item_definitions"
+)
+services_router.register(
+    r"specifications",
+    ItemSpecificationViewSet,
+    basename="pragmas",
+    parents_query_lookups=["definition"],
+)
 
 urlpatterns = router.urls

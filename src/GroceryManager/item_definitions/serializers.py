@@ -1,9 +1,15 @@
 from rest_framework import serializers
 
-from .models import Item_Definition
+from .models import ItemDefinition, ItemSpecification
 
 
-class Item_DefinitionSerializer(serializers.ModelSerializer):
+class ItemDefinitionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Item_Definition
+        model = ItemDefinition
+        fields = "__all__"
+
+
+class ItemSpecificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemSpecification
         fields = "__all__"

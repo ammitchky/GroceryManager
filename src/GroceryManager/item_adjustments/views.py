@@ -4,13 +4,13 @@ from rest_framework import mixins, viewsets
 from rest_framework.permissions import DjangoModelPermissions
 from rest_framework_extensions.mixins import NestedViewSetMixin
 
-from .models import Item_Adjustment
-from .serializers import Item_AdjustmentSerializer
+from .models import ItemAdjustment
+from .serializers import ItemAdjustmentSerializer
 
 log = logging.getLogger(__name__)
 
 
-class Item_AdjustmentViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
-    serializer_class = Item_AdjustmentSerializer
+class ItemAdjustmentViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
+    serializer_class = ItemAdjustmentSerializer
     permission_classes = (DjangoModelPermissions,)
-    queryset = Item_Adjustment.objects.all()
+    queryset = ItemAdjustment.objects.all()

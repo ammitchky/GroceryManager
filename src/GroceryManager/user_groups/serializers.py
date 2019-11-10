@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import User_Group
+from .models import UserGroup
 
 
-class User_GroupSerializer(serializers.ModelSerializer):
+class UserGroupSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User_Group
+        model = UserGroup
         fields = "__all__"

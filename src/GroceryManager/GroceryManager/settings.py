@@ -38,6 +38,7 @@ _OUR_APPS = [
     "item_groups",
     "item_adjustments",
     "user_groups",
+    "grocery_user",
 ]
 
 INSTALLED_APPS = [

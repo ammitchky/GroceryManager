@@ -6,10 +6,12 @@ from typing import Optional
 from django.conf import settings
 from django.db import models
 
+from grocery_user.models import GroceryUser
 
-class User_Group(models.Model):
+
+class UserGroup(models.Model):
     name = models.TextField(primary_key=True)
-    user = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    user = models.ManyToManyField(GroceryUser)
 
     class Meta:
         managed = True

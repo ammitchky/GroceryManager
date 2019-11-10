@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import Item_Location
+from .models import ItemLocation
 
 
-class Item_LocationSerializer(serializers.ModelSerializer):
+class ItemLocationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Item_Location
+        model = ItemLocation
         fields = "__all__"

@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import Item_Adjustment
+from .models import ItemAdjustment
 
 
-class Item_AdjustmentSerializer(serializers.ModelSerializer):
+class ItemAdjustmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Item_Adjustment
+        model = ItemAdjustment
         fields = "__all__"

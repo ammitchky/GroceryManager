@@ -5,7 +5,7 @@ from typing import Optional
 
 from django.db import models
 
-from user_groups.models import User_Group
+from user_groups.models import UserGroup
 
 STORAGE_LOCATION_CHOICE = [
     ("pantry", "Pantry"),
@@ -15,9 +15,9 @@ STORAGE_LOCATION_CHOICE = [
 ]
 
 
-class Item_Location(models.Model):
+class ItemLocation(models.Model):
     name = models.TextField(primary_key=True)
-    user_group = models.ForeignKey(User_Group, on_delete=models.CASCADE, null=True)
+    user_group = models.ForeignKey(UserGroup, on_delete=models.CASCADE, null=True)
     location_type = models.TextField(choices=STORAGE_LOCATION_CHOICE, null=True)
 
     class Meta:
