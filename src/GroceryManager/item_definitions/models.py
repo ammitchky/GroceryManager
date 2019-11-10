@@ -20,7 +20,7 @@ class ItemDefinition(models.Model):
 
 class ItemSpecification(models.Model):
     name = models.TextField()
-    definition = models.ForeignKey(ItemDefinition, on_delete=models.CASCADE)
+    definition = models.ForeignKey(ItemDefinition, on_delete=models.CASCADE, related_name='specifications')
     pantry_expiration = models.DurationField(null=True)
     fridge_expiration = models.DurationField(null=True)
     freezer_expiration = models.DurationField(null=True)
