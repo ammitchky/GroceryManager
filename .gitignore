@@ -105,4 +105,4 @@ venv.bak/
 
 GroceryManager.venv
 node_modules
-src/GroceryManager/frontend/static/frontend/main.js
+main.js
