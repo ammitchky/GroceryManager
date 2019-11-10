@@ -5,7 +5,6 @@ from typing import Optional
 
 from django.db import models
 
-
 class Item_Group(models.Model):
     name = models.TextField(primary_key=True)
 
