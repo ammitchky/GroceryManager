@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     *_OUR_APPS,
 ]
 
+AUTH_USER_MODEL = 'grocery_user.GroceryUser'
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",

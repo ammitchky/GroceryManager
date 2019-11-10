@@ -10,7 +10,7 @@ from user_groups.models import UserGroup
 
 
 class ItemAdjustment(models.Model):
-    name = models.TextField(primary_key=True)
+    name = models.TextField()
     item_type = models.ForeignKey(ItemDefinition, on_delete=models.CASCADE, null=True)
     user_group = models.ForeignKey(UserGroup, on_delete=models.CASCADE, null=True)
 

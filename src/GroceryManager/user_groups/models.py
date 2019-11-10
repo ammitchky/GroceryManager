@@ -10,7 +10,7 @@ from grocery_user.models import GroceryUser
 
 
 class UserGroup(models.Model):
-    name = models.TextField(primary_key=True)
+    name = models.TextField()
     user = models.ManyToManyField(GroceryUser)
 
     class Meta:

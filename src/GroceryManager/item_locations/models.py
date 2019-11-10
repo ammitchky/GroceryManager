@@ -16,7 +16,7 @@ STORAGE_LOCATION_CHOICE = [
 
 
 class ItemLocation(models.Model):
-    name = models.TextField(primary_key=True)
+    name = models.TextField()
     user_group = models.ForeignKey(UserGroup, on_delete=models.CASCADE, null=True)
     location_type = models.TextField(choices=STORAGE_LOCATION_CHOICE, null=True)
 

@@ -9,7 +9,7 @@ services_router = router.register(
 services_router.register(
     r"specifications",
     ItemSpecificationViewSet,
-    basename="pragmas",
+    basename="specifications",
     parents_query_lookups=["definition"],
 )
 
