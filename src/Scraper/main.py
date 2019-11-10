@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-BASE_URL = 'http://www.stilltasty.com/searchitems/index/'
+BASE_URL = "http://www.stilltasty.com/searchitems/index/"
 SUBSECTIONS = [26, 28, 25, 6, 9, 31, 27, 30, 7, 5]
 
 # all_items = set()
@@ -24,11 +24,12 @@ SUBSECTIONS = [26, 28, 25, 6, 9, 31, 27, 30, 7, 5]
 
 # print('Saved list')
 
-with open("list.txt", 'r') as f:
+with open("list.txt", "r") as f:
     all_items = f.readlines()
 
 import os.path
 from os import path
+
 if path.exists("recent.txt"):
     with open("recent.txt", "r") as f:
         start = f.readline().strip()
@@ -48,7 +49,7 @@ for item in all_items:
             continue
     scraped_item = {}
     r = requests.get(item.replace("https", "http"))
-    soup = BeautifulSoup(r.text, 'html.parser')
+    soup = BeautifulSoup(r.text, "html.parser")
     div = soup.find("div", {"class": "food-storage-container"})
     title = div.findNext("h2")
     title = title.text.strip()
@@ -56,10 +57,14 @@ for item in all_items:
     scraped_methods = {}
     for method in methods:
         name = method.findNext("div").findNext("span").text
-        length = method.findNext("div", {"class": "food-storage-right"}).findNext("span").text
+        length = (
+            method.findNext("div", {"class": "food-storage-right"})
+            .findNext("span")
+            .text
+        )
         scraped_methods[name] = length.strip()
     scraped_item[title] = scraped_methods
     with open("recent.txt", "w") as f:
         f.write(item)
-    with open(f"data\\{item.split('/')[-1]}.json", 'w') as f:
+    with open(f"data\\{item.split('/')[-1]}.json", "w") as f:
         f.write(json.dumps(scraped_item))
