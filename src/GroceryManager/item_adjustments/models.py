@@ -4,6 +4,7 @@ import logging
 from typing import Optional
 
 from django.db import models
+
 from item_definitions.models import Item_Definition
 from user_groups.models import User_Group
 

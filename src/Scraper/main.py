@@ -1,3 +1,5 @@
+import json
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,9 +13,9 @@ for section in SUBSECTIONS:
     while True:
         r = requests.get(f"{BASE_URL}{section}?page={page}")
         print(f"{BASE_URL}{section}?page={page}")
-        if 'No Search Item Found.' in r.text:
+        if "No Search Item Found." in r.text:
             break
-        soup = BeautifulSoup(r.text, 'html.parser')
+        soup = BeautifulSoup(r.text, "html.parser")
         div = soup.find("div", {"class": "search-list"})
         for link in div.findAll("a"):
             all_items.add(link["href"])
@@ -68,8 +70,6 @@ for item in all_items:
     # with open(f"data\\{item.split('/')[-1]}.json", "w") as f:
     #     f.write(json.dumps(scraped_item))
 
-
-import json
 
 with open(f"data", "w") as f:
     f.write(json.dumps(scraped_items))

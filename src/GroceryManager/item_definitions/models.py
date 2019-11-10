@@ -3,8 +3,8 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
-from django.db import models
 from django.conf import settings
+from django.db import models
 
 
 class Item_Definition(models.Model):
@@ -12,7 +12,9 @@ class Item_Definition(models.Model):
     pantry_expiration = models.DurationField(null=True)
     fridge_expiration = models.DurationField(null=True)
     freezer_expiration = models.DurationField(null=True)
-    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True
+    )
 
     class Meta:
         managed = True

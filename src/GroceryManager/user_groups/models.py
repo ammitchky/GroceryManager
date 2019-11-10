@@ -3,8 +3,8 @@ from __future__ import annotations
 import logging
 from typing import Optional
 
-from django.db import models
 from django.conf import settings
+from django.db import models
 
 
 class User_Group(models.Model):
