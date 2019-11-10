@@ -103,6 +103,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-GroceryManager.venv
+*.venv
+data
+list.txt
+recent.txt
 node_modules
 main.js
