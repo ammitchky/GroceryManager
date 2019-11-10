@@ -9,7 +9,7 @@ from user_groups.models import UserGroup
 
 
 class ItemGroup(models.Model):
-    name = models.TextField(primary_key=True)
+    name = models.CharField(max_length=255)
     user_group = models.ForeignKey(UserGroup, on_delete=models.CASCADE, null=True)
 
     class Meta:

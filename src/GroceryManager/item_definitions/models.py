@@ -10,7 +10,7 @@ from grocery_user.models import GroceryUser
 
 
 class ItemDefinition(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=255)
     created_by = models.ForeignKey(GroceryUser, on_delete=models.CASCADE, null=True)
 
     class Meta:
@@ -19,8 +19,10 @@ class ItemDefinition(models.Model):
 
 
 class ItemSpecification(models.Model):
-    name = models.TextField()
-    definition = models.ForeignKey(ItemDefinition, on_delete=models.CASCADE, related_name='specifications')
+    name = models.CharField(max_length=255)
+    definition = models.ForeignKey(
+        ItemDefinition, on_delete=models.CASCADE, related_name="specifications"
+    )
     pantry_expiration = models.DurationField(null=True)
     fridge_expiration = models.DurationField(null=True)
     freezer_expiration = models.DurationField(null=True)

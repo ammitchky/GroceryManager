@@ -9,21 +9,44 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('user_groups', '0001_initial'),
+        ("user_groups", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ItemLocation',
+            name="ItemLocation",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('location_type', models.TextField(choices=[('pantry', 'Pantry'), ('fridge', 'Fridge'), ('freezer', 'Freezer'), ('cart', 'Cart')], null=True)),
-                ('user_group', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='user_groups.UserGroup')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                (
+                    "location_type",
+                    models.TextField(
+                        choices=[
+                            ("pantry", "Pantry"),
+                            ("fridge", "Fridge"),
+                            ("freezer", "Freezer"),
+                            ("cart", "Cart"),
+                        ],
+                        null=True,
+                    ),
+                ),
+                (
+                    "user_group",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="user_groups.UserGroup",
+                    ),
+                ),
             ],
-            options={
-                'db_table': 'item_location',
-                'managed': True,
-            },
+            options={"db_table": "item_location", "managed": True,},
         ),
     ]

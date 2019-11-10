@@ -36,7 +36,6 @@ _OUR_APPS = [
     "item_locations",
     "item_definitions",
     "item_groups",
-    "item_adjustments",
     "user_groups",
     "grocery_user",
 ]
@@ -52,7 +51,7 @@ INSTALLED_APPS = [
     *_OUR_APPS,
 ]
 
-AUTH_USER_MODEL = 'grocery_user.GroceryUser'
+AUTH_USER_MODEL = "grocery_user.GroceryUser"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

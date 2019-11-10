@@ -16,9 +16,11 @@ STORAGE_LOCATION_CHOICE = [
 
 
 class ItemLocation(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=255)
     user_group = models.ForeignKey(UserGroup, on_delete=models.CASCADE, null=True)
-    location_type = models.TextField(choices=STORAGE_LOCATION_CHOICE, null=True)
+    location_type = models.CharField(
+        choices=STORAGE_LOCATION_CHOICE, null=True, max_length=255
+    )
 
     class Meta:
         managed = True
